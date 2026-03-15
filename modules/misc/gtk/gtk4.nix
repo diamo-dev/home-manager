@@ -6,6 +6,7 @@ let
     mkEnableOption
     mkIf
     mkOption
+    optionalAttrs
     types
     ;
 
@@ -127,6 +128,11 @@ in
                 ;
             }
             // cfg4.extraConfig;
+          
+          // optionalAttrs (colorScheme != null) { AdwStyleManager =
+            // optionalAttrs (colorScheme == "dark") { "color_scheme" = "ADW_COLOR_SCHEME_PREFER_DARK"; }
+            // optionalAttrs (colorScheme == "light") { "color_scheme" = "ADW_COLOR_SCHEME_PREFER_LIGHT"; };
+          };
         };
       };
       "gtk-4.0/gtk.css" =
