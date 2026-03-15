@@ -79,6 +79,14 @@ in
     // optionalAttrs (gtkVersion == 4 && colorScheme == "dark") { "gtk-interface-color-scheme" = 2; }
     // optionalAttrs (gtkVersion == 4 && colorScheme == "light") { "gtk-interface-color-scheme" = 3; };
 
+  mkAdwSettings = 
+    {
+      gtkVersion
+      colorScheme
+    }:
+    optionalAttrs (gtkVersion == 4 && colorScheme == "dark") { "color_scheme" = "ADW_COLOR_SCHEME_PREFER_DARK"; }
+    // optionalAttrs (gtkVersion == 4 && colorScheme == "light") { "color_scheme" = "ADW_COLOR_SCHEME_PREFER_LIGHT"; };
+
   # Package collection helper for all GTK versions
   collectGtkPackages =
     versionConfigs:
