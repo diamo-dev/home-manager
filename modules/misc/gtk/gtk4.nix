@@ -142,7 +142,7 @@ in
               inherit (cfg4)
                 colorScheme
                 ;
-            }
+            };
         };
       };
       "gtk-4.0/gtk.css" =
